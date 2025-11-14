@@ -16,14 +16,17 @@ public class ProdutoController {
         this.produtoRepository = produtoRepository;
     }
 
-    @GetMapping
-    public List<Produto> listar(){
-        return produtoRepository.findAll();
-    }
-
     @GetMapping("{id}")
     public Produto obterPorId(@PathVariable String id){
         return produtoRepository.findById(id).orElse(null);
+    }
+
+    @GetMapping
+    public List<Produto> listar(@RequestParam(required = false) String nome){
+        if (nome != null) {
+            return produtoRepository.findByNome(nome);
+        }
+        return produtoRepository.findAll();
     }
 
     @PostMapping
