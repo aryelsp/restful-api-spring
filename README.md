@@ -18,7 +18,7 @@ Inclui operações de CRUD completas e uso do banco em memória H2.
 ## ▶️ Como rodar o projeto
 
 ```
-git clone https://github.com/seuusuario/produtosapi.git
+git clone https://github.com/aryelsp/restful-api-spring.git
 ./mvnw spring-boot:run
 ```
 
